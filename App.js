@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 
 import AxiosDemoScreen from './src/screens/axiosDemoScreen';
+import ReduxDemoScreen from './src/screens/reduxDemoScreen';
 
 
 
@@ -12,7 +13,14 @@ import AxiosDemoScreen from './src/screens/axiosDemoScreen';
 const HomeScreen = (props) => {
   return (
       <View>
-          <Button title="Axios Demo" onPress={() => props.navigation.navigate('AxiosDemoScreen')}/>
+          <Button 
+            title="Axios Demo" 
+            onPress={() => props.navigation.navigate('AxiosDemoScreen')}
+          />
+          <Button 
+            title="Redux Demo" 
+            onPress={() => props.navigation.navigate('ReduxDemoScreen')}
+          />
       </View>
   );
 };
@@ -25,8 +33,10 @@ export default App = () => {
         <Stack.Navigator>
               <Stack.Screen name="HomeScreen" component={HomeScreen} />
               <Stack.Screen name="AxiosDemoScreen" component={AxiosDemoScreen} />
+              <Stack.Screen name="ReduxDemoScreen" component={ReduxDemoScreen} />
         </Stack.Navigator>
     </NavigationContainer>
   )
 };
+
 
