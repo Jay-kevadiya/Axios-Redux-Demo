@@ -40,26 +40,25 @@ export default Home = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        paddingHorizontal:20
     },
     headerWrapper: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: 10
     },
     font: {
         fontSize: 20
     },
     contentWrapper: {
         paddingVertical: 20,
-
-        borderWidth: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
     },
     leftWrap: {
+
     },
     img: {
         height: 200,
