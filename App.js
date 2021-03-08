@@ -1,162 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, Text, View, StyleSheet, ScrollView } from 'react-native';
-import Axios from 'axios';
-
-// export default App = () => {
-
-//   const [data, setData] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [title, setTitle] = useState([]);
-//   const [desc, setDesc] = useState([]);
-
-//   useEffect(() => {
-//     getApi()
-//   }, []);
-
-//   const getApi = () => {
-//     Axios.get('https://reactnative.dev/movies.json')
-//       .then((response) => response.data)
-//       .then((json) => {
-//         setData(json.movies);
-//         setTitle(json.title);
-//         setDesc(json.description);
-
-//       })
-//       .catch((error) => console.error(error))
-//       .finally(() => setLoading(false));
-//   }
-
-//   return (
-//     <View style={{ flex: 1, padding: 24 }}>
-
-//       <Text>{title}</Text>
-
-//       <View>
-//         {loading ? <ActivityIndicator /> :
-//           <FlatList
-//             data={data}
-//             keyExtractor={(item, index) => 'key' + index}
-//             renderItem={({ item }) => {
-//               console.log("item", item)
-//               return (
-//                 <Text style={{ flex: 1, fontSize: 15 }}>{item.title}, {item.releaseYear}</Text>
-//               )
-//             }}
-//           />
-//         }
-//       </View>
-//       <Text style={{ fontSize: 20 }}>{desc}</Text>
-//     </View>
-//   );
-// };
-
-// export default App = () => {
-
-//   const [data, setData] = useState([]);
-//   const [loading, setLoading] = useState(true);
+import React from 'react';
+import {Text, View, StyleSheet, Button  } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 
-//   useEffect(() => {
-//     getApi()
-//   }, []);
-
-//   const getApi = () => {
-//     Axios.get('https://jsonplaceholder.typicode.com/todos')
-//       .then((response) => response.data)
-//       .then((json) => {
-//         setData(json);
-//         // setTitle(json.title);
-//         // setDesc(json.description);
-
-//       })
-//       .catch((error) => console.error(error))
-//       .finally(() => setLoading(false));
-//   }
-
-//   return (
-//     <View style={{ flex: 1, padding: 24 }}>
-//       <View>
-//         <ScrollView>
-//           {loading ? <ActivityIndicator /> :
+import AxiosDemoScreen from './src/screens/axiosDemoScreen';
 
 
-//             data.map((item, index) => {
-//               return (
-//                 <View style={styles.mainContainer} key={index}>
-//                   <View style={styles.mainWrapper}>
-//                     <Text style={styles.textStyle}>{item.id} {item.title}</Text>
-
-//                   </View>
-//                 </View>
-//               )
-//             })
-//           }
-//         </ScrollView>
-//       </View>
-//     </View>
-//   );
-// };
-
-export default App = () => {
-
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
 
 
-  useEffect(() => {
-    getApi()
-  }, []);
-
-  const getApi = () => {
-    Axios.get('https://jsonplaceholder.typicode.com/users')
-      .then((response) => response.data)
-      .then((json) => {
-        setData(json);
-        // setTitle(json.title);
-        // setDesc(json.description);
-
-      })
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
-  }
-
+const HomeScreen = (props) => {
   return (
-    <View style={{ flex: 1, padding: 24 }}>
       <View>
-        <ScrollView>
-          {loading ? <ActivityIndicator color="red" /> :
-
-
-            data.map((item, index) => {
-              return (
-                <View style={styles.mainContainer} key={index}>
-                  <View style={styles.mainWrapper}>
-                    <Text style={styles.textStyle}>{item.address.suite}</Text>
-                    <Text style={styles.textStyle}>{item.address.suite}</Text>
-
-                  </View>
-                </View>
-              )
-            })
-          }
-        </ScrollView>
+          <Button title="Axios Demo" onPress={() => props.navigation.navigate('AxiosDemoScreen')}/>
       </View>
-    </View>
   );
 };
 
-const styles = StyleSheet.create({
-  mainContainer: {
-    paddingHorizontal: 20
-  },
-  mainWrapper: {
-    backgroundColor: 'pink',
-    marginVertical: 10
-  },
-  textStyle: {
-    fontSize: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});
+const Stack = createStackNavigator();
+
+export default App = () => {
+  return(
+    <NavigationContainer>
+        <Stack.Navigator>
+              <Stack.Screen name="HomeScreen" component={HomeScreen} />
+              <Stack.Screen name="AxiosDemoScreen" component={AxiosDemoScreen} />
+        </Stack.Navigator>
+    </NavigationContainer>
+  )
+};
+
