@@ -6,20 +6,18 @@
 import { AppRegistry } from 'react-native';
 import App from './App';
 import { name as appName } from './app.json';
-// import { createStore } from 'redux';
-// import { Provider } from 'react-redux';
-// import rootReducer from './src/services/reducers/index';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './src/services/reducers/index';
+const store = createStore(rootReducer);
 
-// const store = createStore(rootReducer);
+export default function DemoApp() {
+    return (
+        <Provider store={store}>
+            <App />
+        </Provider>
+    );
+};
 
-// export default function DemoApp() {
-//     return (
-//         <Provider store={store}>
-//             <App />
-//         </Provider>
-//     );
-// };
-
-// AppRegistry.registerComponent('DemoApp', () => DemoApp);
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => DemoApp);
 
