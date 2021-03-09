@@ -6,12 +6,7 @@ export default Home = (props) => {
     return (
         <View style={styles.container}>
 
-            <View style={styles.headerWrapper} >
-                <Text style={styles.font}>Redux Demo</Text>
-                <TouchableOpacity>
-                    <Icon name="cart-outline" size={50} />
-                </TouchableOpacity>
-            </View>
+            
 
             <View style={styles.contentWrapper}>
                 <View style={styles.leftWrap}>
@@ -25,8 +20,16 @@ export default Home = (props) => {
                     </View>
                     <View style={styles.bottomView}>
                         <View style={styles.backColor}>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => props.addToCartHandler({price:1000, name:'I phone'})}>
                                 <Text style={{ color: '#fff' }}>Add to Cart</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                    <View style={styles.bottomView}>
+                        <View style={styles.backColor}>
+                            <TouchableOpacity onPress={() => props.removeToCartHandler()}>
+                                <Text style={{ color: '#fff' }}>Remove To Cart</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -42,14 +45,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingHorizontal:20
-    },
-    headerWrapper: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },
-    font: {
-        fontSize: 20
     },
     contentWrapper: {
         paddingVertical: 20,
@@ -73,7 +68,7 @@ const styles = StyleSheet.create({
         paddingVertical: 20
     },
     bottomView: {
-
+        paddingVertical:20
     },
     phoneText: {
         fontSize: 15,

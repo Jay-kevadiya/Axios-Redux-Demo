@@ -11,6 +11,8 @@ import { Provider } from 'react-redux';
 import rootReducer from './src/services/reducers/index';
 const store = createStore(rootReducer);
 
+console.warn("store data => ", store);
+
 export default function DemoApp() {
     return (
         <Provider store={store}>
