@@ -1,12 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default Home = (props) => {
     return (
         <View style={styles.container}>
 
-            
 
             <View style={styles.contentWrapper}>
                 <View style={styles.leftWrap}>
@@ -35,6 +34,10 @@ export default Home = (props) => {
                     </View>
 
                 </View>
+            </View>
+            
+            <View>
+
             </View>
 
         </View>

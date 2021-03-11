@@ -13,7 +13,3 @@ const mapDishpatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps,mapDishpatchToProps)(Home);
-
-
-
-// export default Home;

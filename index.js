@@ -6,12 +6,14 @@
 import { AppRegistry } from 'react-native';
 import App from './App';
 import { name as appName } from './app.json';
-import { createStore } from 'redux';
+import { createStore,applyMiddleware } from 'redux';
+import reduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import rootReducer from './src/services/reducers/index';
-const store = createStore(rootReducer);
+import reduxDemoScreen from './src/screens/reduxDemoScreen';
 
-console.warn("store data => ", store);
+const store = createStore(rootReducer, applyMiddleware(reduxThunk));
+
 
 export default function DemoApp() {
     return (

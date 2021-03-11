@@ -18,8 +18,8 @@ export default function cartItems(state = [], action) {
             return [
                 ...state,
                 
-            ]
-
+            ] 
+            
             break;
 
         default:
