@@ -6,6 +6,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import AxiosDemoScreen from './src/screens/axiosDemoScreen';
 import ReduxDemoScreen from './src/screens/reduxDemoScreen';
+import CartDemo from './src/screens/cartDemo';
+import IncDecDemo from './src/screens/incDecDemo';
 
 
 
@@ -34,6 +36,8 @@ export default App = () => {
               <Stack.Screen name="HomeScreen" component={HomeScreen} />
               <Stack.Screen name="AxiosDemoScreen" component={AxiosDemoScreen} />
               <Stack.Screen name="ReduxDemoScreen" component={ReduxDemoScreen} />
+              <Stack.Screen name="CartDemo" component={CartDemo} />
+              <Stack.Screen name="IncDecDemo" component={IncDecDemo}/>
         </Stack.Navigator>
     </NavigationContainer>
   )

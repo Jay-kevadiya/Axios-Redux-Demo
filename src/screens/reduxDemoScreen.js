@@ -1,14 +1,19 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import HomeContainer from '../containers/homeContainer';
-import HeaderContainer from '../containers/headerContainer';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
 
-export default ReduxDemoScreen = () => {
+
+export default ReduxDemoScreen = (props) => {
     return(
         <View style={styles.container}>    
-            <HeaderContainer/>      
-            <HomeContainer/>
+            <Button
+                title="CartDemo"
+                onPress={() => props.navigation.navigate('CartDemo')}
+            />
+            <Button
+                title="INC/DEC Demo"
+                onPress={() => props.navigation.navigate('IncDecDemo')}
+            />
         </View>
     )
 };
@@ -16,9 +21,5 @@ export default ReduxDemoScreen = () => {
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-    },
-    fontStyle:{
-        fontSize:25,
-        fontWeight:'400'
     }
 });
