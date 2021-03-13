@@ -1,11 +1,13 @@
-import axios from 'axios';
+import Axios from 'axios';
 import {
     ADD_TO_CART,
     REMOVE_TO_CART,
     INCREMENT,
     DECREMENT,
-    RESET
+    RESET,
+    API_DATA
 } from '../constants';
+
 
 export const addToCart = (data) => {
     
@@ -39,3 +41,14 @@ export const Reset = () => {
         type: RESET,
     }
 };
+
+export const ApiData =  () => async(dispatch) => {
+        const response =  await Axios.get('https://reactnative.dev/movies.json')
+        .catch((e) => console.error(e));
+        // console.log('=>>>', response);
+    dispatch({
+        type: API_DATA,
+        payload: response.data
+    });
+};
+

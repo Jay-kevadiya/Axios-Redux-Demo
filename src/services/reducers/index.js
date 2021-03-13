@@ -1,7 +1,8 @@
-import {combineReducers} from 'redux';
-import {cartItems, IncDec} from './reducers';
+import { combineReducers } from 'redux';
+import { cartItems, IncDec, ApiCall } from './reducers';
 
-export default  combineReducers({
+export default combineReducers({
     cartItems,
-    IncDec
+    IncDec,
+    ApiCall
 })

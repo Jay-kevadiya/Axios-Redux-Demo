@@ -4,7 +4,7 @@ import {Increment, Decrement, Reset} from '../services/actions/actions';
 import {useSelector, useDispatch} from 'react-redux';
 
 
-export default IncDecDemo = () => {
+export default IncDecDemo = (props) => {
 
     const counter = useSelector(state => state.IncDec);
     const dispatch = useDispatch();

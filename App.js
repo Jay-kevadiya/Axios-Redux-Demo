@@ -8,6 +8,7 @@ import AxiosDemoScreen from './src/screens/axiosDemoScreen';
 import ReduxDemoScreen from './src/screens/reduxDemoScreen';
 import CartDemo from './src/screens/cartDemo';
 import IncDecDemo from './src/screens/incDecDemo';
+import ApiDemo from './src/screens/apiDemo';
 
 
 
@@ -38,6 +39,8 @@ export default App = () => {
               <Stack.Screen name="ReduxDemoScreen" component={ReduxDemoScreen} />
               <Stack.Screen name="CartDemo" component={CartDemo} />
               <Stack.Screen name="IncDecDemo" component={IncDecDemo}/>
+              <Stack.Screen name="ApiDemo" component={ApiDemo}/>
+
         </Stack.Navigator>
     </NavigationContainer>
   )

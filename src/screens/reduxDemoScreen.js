@@ -14,6 +14,10 @@ export default ReduxDemoScreen = (props) => {
                 title="INC/DEC Demo"
                 onPress={() => props.navigation.navigate('IncDecDemo')}
             />
+            <Button
+                title="Api Demo"
+                onPress={() => props.navigation.navigate('ApiDemo')}
+            />
         </View>
     )
 };

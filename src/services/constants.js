@@ -3,3 +3,4 @@ export const REMOVE_TO_CART = 'REMOVE_TO_CART';
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const RESET = 'RESET';
+export const API_DATA = 'API_DATA';

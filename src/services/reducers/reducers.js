@@ -1,7 +1,8 @@
-import { ADD_TO_CART, REMOVE_TO_CART, INCREMENT, DECREMENT, RESET } from '../constants';
+import { ADD_TO_CART, REMOVE_TO_CART, INCREMENT, DECREMENT, RESET, API_DATA } from '../constants';
 
 const initialState = {
     cartData: [],
+    movieData: []
 }
 
 export function cartItems(state = [], action) {
@@ -43,5 +44,19 @@ export function IncDec(state = 0, action) {
 
         default:
             return state;
+    }
+};
+
+export const ApiCall = (state = initialState, action) => {
+    switch(action.type){
+        case API_DATA:
+            return {
+                ...state,
+                movieData: action.payload
+            }
+
+            default: 
+                return state;
+
     }
 };

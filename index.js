@@ -9,7 +9,7 @@ import { name as appName } from './app.json';
 import { createStore,applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import rootReducer from './src/services/reducers/index';
+import rootReducer from './src/services/reducers';
 import reduxDemoScreen from './src/screens/reduxDemoScreen';
 
 const store = createStore(rootReducer, applyMiddleware(reduxThunk));
