@@ -5,10 +5,9 @@ import { useSelector, useDispatch } from 'react-redux';
 
 export default ApiDemo = () => {
 
-    const [data, setData] = useState([]);
 
     const value = useSelector(state => state.ApiCall);
-    const movie = value.movieData.movies;
+    const movie = value.movieData.movies || [];
 
     const renderMovies = ({item}) => {
         return(
@@ -25,8 +24,6 @@ export default ApiDemo = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(ApiData())
-        setData(movie);
-
     }, [])
     return (
         <View style={styles.container}>
@@ -39,7 +36,7 @@ export default ApiDemo = () => {
             })} */}
 
             <FlatList
-                data={data}
+                data={movie}
                 keyExtractor={item => item.id}
                 renderItem={renderMovies}
             />

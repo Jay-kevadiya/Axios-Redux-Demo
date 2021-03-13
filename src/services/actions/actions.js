@@ -42,11 +42,10 @@ export const Reset = () => {
     }
 };
 
-export const ApiData =  () => async(dispatch) => {
+export const ApiData =  () => async(dispatch)  => {
         const response =  await Axios.get('https://reactnative.dev/movies.json')
         .catch((e) => console.error(e));
-        // console.log('=>>>', response);
-    dispatch({
+   return dispatch({
         type: API_DATA,
         payload: response.data
     });

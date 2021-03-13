@@ -48,15 +48,15 @@ export function IncDec(state = 0, action) {
 };
 
 export const ApiCall = (state = initialState, action) => {
-    switch(action.type){
-        case API_DATA:
+    switch (action.type) {
+        case API_DATA:   
             return {
                 ...state,
                 movieData: action.payload
             }
 
-            default: 
-                return state;
+        default:
+            return state;
 
     }
 };
