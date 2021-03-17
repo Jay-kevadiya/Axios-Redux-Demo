@@ -2,7 +2,8 @@ import { ADD_TO_CART, REMOVE_TO_CART, INCREMENT, DECREMENT, RESET, API_DATA } fr
 
 const initialState = {
     cartData: [],
-    movieData: []
+    movieData: [],
+    // count: 0
 }
 
 export function cartItems(state = [], action) {

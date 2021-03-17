@@ -10,7 +10,14 @@ import { createStore,applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import rootReducer from './src/services/reducers';
-import reduxDemoScreen from './src/screens/reduxDemoScreen';
+// import reduxDemoScreen from './src/screens/reduxDemoScreen';
+
+
+// import createSagaMiddleware from 'redux-saga';
+// import rootSaga from './src/services/reducers/rootSaga';
+// const sagaMiddleware = createSagaMiddleware();
+// const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+// sagaMiddleware.run(rootSaga);
 
 const store = createStore(rootReducer, applyMiddleware(reduxThunk));
 

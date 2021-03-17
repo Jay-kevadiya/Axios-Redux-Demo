@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 export default ApiDemo = () => {
 
 
-    const value = useSelector(state => state.ApiCall);
+    const value = useSelector((state) => state.ApiCall);
     const movie = value.movieData.movies || [];
 
     const renderMovies = ({item}) => {
